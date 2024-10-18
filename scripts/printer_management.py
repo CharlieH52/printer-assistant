@@ -67,5 +67,7 @@ class PrinterManagement:
     def delete_printer(self, device=str):
         subprocess.run(f'wmic printer where name="{device}" delete /nointeractive', shell=True)
     
-    def delete_except(self, device=str):
-        pass
+    def delete_except(self, printers=list):
+        for devices in printers:
+            subprocess.run(f'wmic printer where name="{devices}" delete /nointeractive', shell=True)
+            sleep(2)

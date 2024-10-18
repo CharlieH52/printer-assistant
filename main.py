@@ -10,6 +10,7 @@ if __name__ == '__main__':
     rdr = Reader()
     
     control = False
+    printer = str
 
     while True:
         system('cls')
@@ -72,7 +73,14 @@ if __name__ == '__main__':
         elif selection == 5:
             pm.delete_except(device=printer)
         elif selection == 6:
-            pass
+            devices = []
+            for device in rdr.printer_list:
+                if printer not in device:
+                    devices.append(device)
+                else:
+                    print(f'{printer} not added.')
+            
+            pm.delete_except(devices)
         elif selection == 'e' or selection == 'E':
             break
         
