@@ -1,12 +1,7 @@
-from src.app_menus import AppCLI
+from src.app_view import AppView
 
-ac = AppCLI()
+av = AppView()
 
-if __name__ == '__main__':
-    while True:
-        ac.main_menu()
+if __name__ == "__main__":
+    av.main_menu()
         
-        selection = input('Type any key to return or "e" to exit...')
-                
-        if selection == 'e' or selection == 'E':
-            break
