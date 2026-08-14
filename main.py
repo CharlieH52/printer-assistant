@@ -1,7 +1,9 @@
-from src.app_view import AppView
+import flet as ft
+from src.printer_app import PrinterApp
 
-av = AppView()
+def main(page: ft.Page):
+    PrinterApp(page)
 
 if __name__ == "__main__":
-    av.main_menu()
+    ft.app(target=main)
         
